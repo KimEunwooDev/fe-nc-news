@@ -1,3 +1,5 @@
+import VoteContainer from "./VoteContaincer";
+
 const SingleArticle = ({ currentArticle }) => {
   return (
     <>
@@ -9,6 +11,7 @@ const SingleArticle = ({ currentArticle }) => {
         alt={`image of ${currentArticle.article_img_url}`}
       />
       <p>{currentArticle.body}</p>
+      <VoteContainer currentArticle={currentArticle} />
     </>
   );
 };

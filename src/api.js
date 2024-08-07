@@ -23,4 +23,8 @@ export const getCommentsByID = (article_id) => {
   });
 };
 
-getCommentsByID(1);
+export const updateArticleByID = (article_id, num) => {
+  return api.patch(`/articles/${article_id}`, {
+    inc_votes: num,
+  });
+};
