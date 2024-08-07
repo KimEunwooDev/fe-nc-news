@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
-  console.log(article.article_id, "article.article_id in ArticleCard");
   return (
     <Link to={`/articles/${article.article_id}`}>
       <div className="article-card">
