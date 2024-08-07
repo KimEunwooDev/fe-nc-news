@@ -16,3 +16,11 @@ export const getTopics = () => {
     return topicsArr;
   });
 };
+
+export const getCommentsByID = (article_id) => {
+  return api.get(`/articles/${article_id}/comments`).then((response) => {
+    return response.data;
+  });
+};
+
+getCommentsByID(1);
