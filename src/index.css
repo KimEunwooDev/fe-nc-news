@@ -70,11 +70,26 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #7d6b63;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.like-button {
+  margin: 20px;
+  background-color: hwb(121 68% 0%);
+}
+.like-button:hover {
+  background-color: rgb(88, 228, 91);
+}
+
+.unlike-button {
+  background-color: #ffb4b4;
+}
+.unlike-button:hover {
+  background-color: #ef3333;
 }
 
 /*
