@@ -7,7 +7,6 @@ const DisplayArticleById = () => {
   const { article_id } = useParams();
   const [currentArticle, setCurrentArticle] = useState({});
   const [isLoading, setIsLoading] = useState("");
-  console.log(article_id, "param");
 
   useEffect(() => {
     axios
@@ -21,8 +20,6 @@ const DisplayArticleById = () => {
         return "error!";
       });
   }, [article_id]);
-
-  console.log(currentArticle, "currentArticle");
 
   return (
     <>
