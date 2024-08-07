@@ -60,3 +60,15 @@
   margin-top: 30px;
   padding: 5px;
 }
+
+#nc-news {
+  background-color: #171e27;
+  color: white;
+  height: 60px;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: normal;
+  text-align: center;
+}
