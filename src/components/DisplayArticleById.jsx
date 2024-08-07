@@ -8,6 +8,7 @@ const DisplayArticleById = () => {
   const { article_id } = useParams();
   const [currentArticle, setCurrentArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [errHandler, setErrHandler] = useState(false);
 
   useEffect(() => {
     axios
@@ -15,10 +16,14 @@ const DisplayArticleById = () => {
       .then((response) => {
         const { article } = response.data;
         setCurrentArticle(article);
-        setIsLoading(false);
       })
       .catch((err) => {
-        return "error!";
+        if (err) {
+          setErrHandler(true);
+        }
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, [article_id]);
 
@@ -26,6 +31,9 @@ const DisplayArticleById = () => {
     return <h2>Loading...</h2>;
   }
 
+  if (errHandler) {
+    return <h2>Request failed</h2>;
+  }
   return (
     <>
       <SingleArticle currentArticle={currentArticle} />
