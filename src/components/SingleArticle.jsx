@@ -2,7 +2,7 @@ import VoteContainer from "./VoteContaincer";
 
 const SingleArticle = ({ currentArticle }) => {
   return (
-    <>
+    <div className="single-article">
       <h2>{currentArticle.title}</h2>
       <p>Author: {currentArticle.author}</p>
       <p>{currentArticle.created_at}</p>
@@ -12,7 +12,7 @@ const SingleArticle = ({ currentArticle }) => {
       />
       <p>{currentArticle.body}</p>
       <VoteContainer currentArticle={currentArticle} />
-    </>
+    </div>
   );
 };
 
