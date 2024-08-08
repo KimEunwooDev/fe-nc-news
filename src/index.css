@@ -2,7 +2,6 @@
   background-color: white;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   width: 100%;
 
@@ -72,7 +71,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #f9f9f9;
+  background-color: #171e27;
+  color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -100,6 +100,29 @@ button:focus-visible {
   background-color: #ffb4b4;
 }
 
+.user-card {
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.user-card > img {
+  width: 200px;
+  height: auto;
+}
+
+p button {
+  margin: 10px;
+}
+
+textarea {
+  width: 30rem;
+  height: 5rem;
+}
+
 @media screen and (max-width: 500px) and (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -109,7 +132,8 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #171e27;
+    color: #ffffff;
   }
 }
 
@@ -118,8 +142,8 @@ button:focus-visible {
 }
 
 .single-article {
+  margin: 15px;
   padding: 5px;
-  display: contents;
 }
 
 .single-article > img {
