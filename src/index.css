@@ -93,6 +93,7 @@ button:focus-visible {
 }
 
 .unlike-button {
+  margin: 20px;
   background-color: #ffb4b4;
 }
 .unlike-button:hover {
