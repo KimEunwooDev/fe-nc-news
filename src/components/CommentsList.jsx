@@ -3,13 +3,31 @@ import { useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
 
 const CommentsList = ({ articleId, commentsById, setCommentsById }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [noComments, setNoComments] = useState(false);
+
   useEffect(() => {
     getCommentsByID(articleId)
       .then(({ comments }) => {
         setCommentsById(comments);
+        setIsLoading(false);
+        console.log(comments);
       })
-      .catch((err) => console.log("error..."));
+      .catch((err) => {
+        if (err.response.data.status === 404) {
+          setNoComments(true);
+        }
+      });
   }, [articleId]);
+
+  if (noComments) {
+    return <h2>No Comments</h2>;
+  }
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <div className="comments-container">
       <h3>Comments</h3>
