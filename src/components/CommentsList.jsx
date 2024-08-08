@@ -11,7 +11,6 @@ const CommentsList = ({ articleId, commentsById, setCommentsById }) => {
       .then(({ comments }) => {
         setCommentsById(comments);
         setIsLoading(false);
-        console.log(comments);
       })
       .catch((err) => {
         if (err.response.data.status === 404) {
