@@ -28,3 +28,16 @@ export const updateArticleByID = (article_id, num) => {
     inc_votes: num,
   });
 };
+
+export const postComment = (article_id, username, body) => {
+  const newComment = {
+    username,
+    body,
+  };
+  return api
+    .post(`/articles/${article_id}/comments`, newComment)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    });
+};
