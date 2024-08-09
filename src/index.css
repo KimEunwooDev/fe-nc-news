@@ -25,6 +25,11 @@
   --heading-color: #111;
 }
 
+.nav-box {
+  background-color: #171e27;
+  padding: 10px;
+}
+
 nav a {
   font-weight: 500;
   background-color: #171e27;
@@ -32,10 +37,12 @@ nav a {
   text-decoration: inherit;
   margin: 5px;
   padding: 5px;
+  border-radius: 10px;
 }
 
 nav a:hover {
-  background-color: #d1d1d1;
+  color: white;
+  background-color: #3199d2;
 }
 
 a {
@@ -123,7 +130,7 @@ textarea {
   height: 5rem;
 }
 
-@media screen and (max-width: 500px) and (prefers-color-scheme: light) {
+@media screen and (max-width: 767px) and (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -134,6 +141,9 @@ textarea {
   button {
     background-color: #171e27;
     color: #ffffff;
+  }
+  select {
+    padding-right: 1px;
   }
 }
 
@@ -180,6 +190,7 @@ textarea {
   color: white;
   height: 60px;
   top: 0;
+  margin-bottom: 0;
   width: 100%;
   font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: normal;
@@ -216,4 +227,25 @@ ul {
 #delete-button {
   margin: 5px;
   background-color: #36485e;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #d6d6d6;
+  color: #3c3c3c;
+  font-size: inherit;
+  padding: 0.2em;
+  padding-right: 2em;
+  border: 0;
+  margin: 5px;
+  margin-right: 2rem;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: "";
 }
