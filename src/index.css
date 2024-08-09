@@ -194,6 +194,7 @@ textarea {
 .comment-box {
   border: 1px solid black;
   margin: 20px;
+  padding-bottom: 10px;
 }
 .comment-header {
   display: flex;
@@ -210,4 +211,9 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+#delete-button {
+  margin: 5px;
+  background-color: #36485e;
 }

@@ -7,7 +7,6 @@ const CommentCard = ({ comment }) => {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
   const comment_id = comment.comment_id;
-  console.log(comment_id, "cooment id");
   const refreshPage = () => {
     location.href = location.href;
   };

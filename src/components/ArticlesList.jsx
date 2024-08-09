@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
-import { getAllArticles } from "../api";
+import { getArticles } from "../api";
 
 import ArticleCard from "./ArticleCard";
 
-const ArticlesList = () => {
+const ArticlesList = ({ searchParams, setSearchParams }) => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const topic = searchParams.get("topic");
+
   useEffect(() => {
-    getAllArticles()
+    getArticles(topic)
       .then(({ articles }) => {
         setArticles(articles);
         setIsLoading(false);
       })
       .catch((err) => console.log("error..."));
-  }, []);
+  }, [topic]);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
