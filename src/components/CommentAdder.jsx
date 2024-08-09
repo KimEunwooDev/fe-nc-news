@@ -2,19 +2,17 @@
 //     username: "rogersop",
 //     body: "It is so interesting !",
 //   };
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { postComment } from "../api";
+import { useContext } from "react";
+import { UserContext } from "./context/UserProvider";
 
 const CommentAdder = ({ articleId, setCommentsById }) => {
   const [userName, setUserName] = useState("");
   const [commentBody, setCommentBody] = useState("");
   const [isSucces, setIsSucces] = useState(false);
 
-  const userNameHandler = (e) => {
-    console.log(e.target.value);
-    const username = e.target.value;
-    setUserName(username);
-  };
+  const { loggedInUser } = useContext(UserContext);
 
   const commentBodyHandler = (e) => {
     console.log(e.target.value);
@@ -24,7 +22,7 @@ const CommentAdder = ({ articleId, setCommentsById }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    postComment(articleId, userName, commentBody).then((data) => {
+    postComment(articleId, loggedInUser.username, commentBody).then((data) => {
       const postedComment = { ...data.postedComment };
       setCommentsById((prevComments) => {
         const copyComments = [...prevComments];
@@ -40,14 +38,8 @@ const CommentAdder = ({ articleId, setCommentsById }) => {
   return (
     <div>
       <form>
-        <label htmlFor="username">User Name: </label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={userName}
-          onChange={userNameHandler}
-        />
+        <label htmlFor="username">User Name : {loggedInUser.username}</label>
+
         <br />
         <br />
         <label htmlFor="comment-body"></label>
