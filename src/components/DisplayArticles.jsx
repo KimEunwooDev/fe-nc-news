@@ -1,11 +1,17 @@
 import ArticlesList from "./ArticlesList";
 import ArticlesFilter from "./ArticlesFilter";
 
-const DisplayArticles = () => {
+const DisplayArticles = ({ searchParams, setSearchParams }) => {
   return (
     <>
-      <ArticlesFilter />
-      <ArticlesList />
+      <ArticlesFilter
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
+      />
+      <ArticlesList
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
+      />
     </>
   );
 };
