@@ -14,12 +14,6 @@ const CommentAdder = ({ articleId, setCommentsById }) => {
 
   const { loggedInUser } = useContext(UserContext);
 
-  //   const userNameHandler = (e) => {
-  //     console.log(e.target.value);
-  //     const username = e.target.value;
-  //     setUserName(username);
-  //   };
-
   const commentBodyHandler = (e) => {
     console.log(e.target.value);
     const newCommentBody = e.target.value;
